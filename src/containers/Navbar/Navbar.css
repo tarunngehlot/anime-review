@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+.navbarItems{
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    background-color: rgba(90, 6, 6, 1);
+    height: 100px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.logo{
+    width: 100%;
+    margin-left: 10px;
+    color: white;
+    align-items: center;
+    transform: translateY(25%);
+}
+
+.menuIcon{
+    display: none;
+}
+
+.links{
+    width: 50vw;
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    grid-gap: 10px;
+    list-style: none;
+    margin-right: 1rem;
+    transform: translateY(25%);
+    font-size: 1.5rem;
+}
+
+.links li a{
+    text-decoration: none;
+    font-family: 'Architects Daughter', sans-serif;
+    color: inherit;
+    padding: 0.5rem 0.5rem;
+}
+
+.links li a:hover{
+    border-radius: 4px;
+    transition: all 0.2s ease-out;
+    animation: swap 1s both infinite;
+}
+
+@keyframes swap {
+    0% {
+        background-color: rgba(0, 255, 255, 0.3);
+    }
+    20% {
+        background-color: rgba(0, 255, 255, 0.6);
+    }
+    40% {
+        background-color: rgba(0, 255, 255, 0.3);
+    }
+    60% {
+        background-color: rgba(255, 0, 255, 0.3);
+    }
+    80% {
+        background-color: rgba(255, 0, 255, 0.6);
+    }
+    to {
+        background-color: rgba(0, 255, 255, 0.3);
+    }
+}
+
+@media screen and (max-width:900px) {
+    .navbarItems{
+        position: fixed;
+        height: 80px;
+    }
+
+    .links{
+        display: flex;
+        background-color: rgba(0,255,255,0.8);
+        flex-direction: column;
+        width: 100%;
+        top: 100px;
+        left: -110%;
+        transform: translateY(0);
+        height: 200px;
+        position: absolute;
+        transition: all 0.8s ease-out;
+        align-items: center;
+        padding-top: 10px;
+    }
+
+    .links.active{
+        left:0%;
+        transition: all 0.8s ease-out;
+    }
+
+    .links li a{
+        padding: 10px 900px;
+        font-weight: bold;
+    }
+
+    .menuIcon{
+        display: block;
+    }
+}

@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+.home{
+    position: relative;
+    overflow: hidden;
+}
+
+.walk{
+    position: absolute;
+    top: 357px;
+    height: 300px;
+    filter: grayscale(100%);
+}
+
+.rotateBox1{
+    position:absolute;
+    top: -25px;
+    left: 50px;
+    height: 250px;
+    width: 250px;
+    border: 4px solid rgba(255,255,255,0.5);
+    transform-origin: center;
+    animation: circle 15s linear infinite
+}
+
+.rotateBox2{
+    position:absolute;
+    top: 450px;
+    left: 250px;
+    height: 150px;
+    width: 150px;
+    background-color: rgba(255,255,255,0.5);
+    transform-origin: center;
+    animation: circle 5s linear infinite
+}
+
+.rotateBox3{
+    position:absolute;
+    top: 550px;
+    left: 350px;
+    height: 100px;
+    width: 100px;
+    border: 3px solid rgba(255,255,255,0.5);
+    transform-origin: center;
+    animation: circle 10s linear infinite
+}
+
+@keyframes circle {
+    0%{
+        transform: translate(-50%,-50%) rotateZ(0deg);
+    }
+    100%{
+        transform: translate(-50%,-50%) rotateZ(360deg);
+    }
+}
+.boxIntro{
+    position: absolute;
+    width: 500px;
+    top:10%;
+    left: 5%;
+    z-index: 2;
+    font-family: 'Patrick Hand', cursive;
+    color: white;
+    font-size: 1.5rem;
+    transition: 0.1s;
+    transition-delay: 1s;
+}
+
+.boxIntro p{
+    width: 30vw;
+}
+
+.intro{
+    color: rgb(0,255,255);
+    font-size: 2rem;
+    display: inline-block;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.introMain{
+    color: orange;
+    font-size: 5rem;
+    font-family: 'Luckiest Guy', cursive;   
+}
+
+.intro::first-letter{
+    font-size: 3rem;
+}
+
+.randomPanel{
+    position: relative;
+    min-height: 100vh;
+}
+
+.imgAnimation{
+    background-color: chocolate;
+    height: 100vh;
+    width: 70vw;
+    justify-self: flex-end;
+}
+
+.second{
+    position: relative;
+    height: 100vh;
+    background-color: brown;
+}
+
+.popUp{
+    position: absolute;
+    animation: switch 10s both infinite;
+    transform: translate(0,-50%);
+}
+
+@keyframes switch {
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:900px){
+    .boxIntro{
+        width: 80vw;
+        position: relative;
+    }
+
+    .intro{
+        font-size: 5vw;
+        display: inline-block;
+    }
+
+    .introMain{
+        display: inline-block;
+        color: orange;
+        font-size: 12vw;
+    }
+
+    .intro::first-letter{
+        font-size: 8vw;
+    }
+
+}
